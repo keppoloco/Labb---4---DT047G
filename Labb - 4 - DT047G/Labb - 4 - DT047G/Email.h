@@ -12,12 +12,14 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& o, const email& e)
 	{
-		o << "Sender: " << e.who << " Subject: " << e.subject << " date: " << e.date << '\n';
+		o << "Sender: " << e.who << " | Subject: " << e.subject << " | date: " << e.date << '\n';
 		return o;
 	}
 	struct CompWhoDateSubject {
 		bool operator()(const email& lhs, const email& rhs)
 		{
+			if (lhs.who == rhs.who)
+				return false;
 			return lhs.who < rhs.who;
 		}
 	};

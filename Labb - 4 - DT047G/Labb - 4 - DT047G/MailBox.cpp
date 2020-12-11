@@ -1,19 +1,19 @@
 #include "MailBox.h"
 #include <algorithm>
 
-void Mailbox::sortWho(std::vector<email>& vec)
+void Mailbox::sortWho()
 {
-	std::sort(vec.begin(), vec.end(), email::CompWhoDateSubject());
+	std::sort(mail_vector.begin(), mail_vector.end(), email::CompWhoDateSubject());
 }
 
-void Mailbox::sortDate(std::vector<email>& vec)
+void Mailbox::sortDate()
 {
-	std::sort(vec.begin(), vec.end(), email::CompDateWhoSubject());
+	std::sort(mail_vector.begin(), mail_vector.end(), email::CompDateWhoSubject());
 }
 
-void Mailbox::sortSubject(std::vector<email>& vec)
+void Mailbox::sortSubject()
 {
-	std::sort(vec.begin(), vec.end(), email::CompSubjectWheDate());
+	std::sort(mail_vector.begin(), mail_vector.end(), email::CompSubjectWheDate());
 }
 
 void Mailbox::insertEmail(const email& e)
