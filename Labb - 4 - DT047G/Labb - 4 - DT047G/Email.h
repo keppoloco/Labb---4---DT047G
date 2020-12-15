@@ -9,7 +9,6 @@ public:
 	
 	email(std::string who, std::string date, std::string subject) : who(who), date(date), subject(subject) {}
 
-
 	friend std::ostream& operator<<(std::ostream& o, const email& e)
 	{
 		o << "Sender: " << e.who << " | Subject: " << e.subject << " | date: " << e.date << '\n';
@@ -18,9 +17,11 @@ public:
 	struct CompWhoDateSubject {
 		bool operator()(const email& lhs, const email& rhs)
 		{
-			if (lhs.who == rhs.who && CompDateWhoSubject()(lhs, rhs))
-				CompSubjectWhoDate()(lhs, rhs);
-
+			if (lhs.who == rhs.who) {
+				if (!CompDateWhoSubject()(lhs, rhs)) {
+					return CompSubjectWhoDate()(lhs, rhs);
+				}
+			}
 			return lhs.who < rhs.who;
 		}
 	};
@@ -28,7 +29,8 @@ public:
 	struct CompDateWhoSubject {
 		bool operator()(const email& lhs, const email& rhs)
 		{
-			if (lhs.date == rhs.date && CompSubjectWhoDate()(lhs,rhs))
+			if (lhs.date == lhs.date)
+				if (CompSubjectWhoDate()(lhs, rhs))
 					return false;
 
 			return lhs.date < rhs.date;

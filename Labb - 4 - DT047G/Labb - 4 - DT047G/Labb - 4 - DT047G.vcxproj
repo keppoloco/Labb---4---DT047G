@@ -142,7 +142,6 @@
     <ClInclude Include="MailBox.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Email.cpp" />
     <ClCompile Include="MailBox.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>

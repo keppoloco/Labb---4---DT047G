@@ -23,9 +23,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Email.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MailBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
