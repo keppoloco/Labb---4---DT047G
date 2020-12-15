@@ -13,7 +13,7 @@ void Mailbox::sortDate()
 
 void Mailbox::sortSubject()
 {
-	std::sort(mail_vector.begin(), mail_vector.end(), email::CompSubjectWheDate());
+	std::sort(mail_vector.begin(), mail_vector.end(), email::CompSubjectWhoDate());
 }
 
 void Mailbox::insertEmail(const email& e)

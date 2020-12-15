@@ -18,8 +18,9 @@ public:
 	struct CompWhoDateSubject {
 		bool operator()(const email& lhs, const email& rhs)
 		{
-			if (lhs.who == rhs.who)
-				return false;
+			if (lhs.who == rhs.who && CompDateWhoSubject()(lhs, rhs))
+				CompSubjectWhoDate()(lhs, rhs);
+
 			return lhs.who < rhs.who;
 		}
 	};
@@ -27,11 +28,14 @@ public:
 	struct CompDateWhoSubject {
 		bool operator()(const email& lhs, const email& rhs)
 		{
+			if (lhs.date == rhs.date && CompSubjectWhoDate()(lhs,rhs))
+					return false;
+
 			return lhs.date < rhs.date;
 		}
 	};
 
-	struct CompSubjectWheDate {
+	struct CompSubjectWhoDate {
 		bool operator()(const email& lhs, const email& rhs)
 		{
 			return lhs.subject < rhs.subject;
