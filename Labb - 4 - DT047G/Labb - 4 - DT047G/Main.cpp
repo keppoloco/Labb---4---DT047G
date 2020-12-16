@@ -14,17 +14,12 @@ int main()
 	setlocale(LC_ALL, "");
 	Mailbox box;
 
-
+	box.insertEmail(email("Anders", "2002-02-28", "lab 4"));
 	box.insertEmail(email("Anders", "2002-02-28", "lab 2"));
+	box.insertEmail(email("Pelle", "2010-02-28", "lab 16"));
+	box.insertEmail(email("Anders", "2002-02-28", "lab 3"));
 	box.insertEmail(email("Anders", "2002-02-28", "lab 1"));
 	
-	//box.insertEmail(email("Kent Ekerot", "2020-02-10", "Bråk på krogen eller?"));
-	//box.insertEmail(email("Kent Ekerot", "2020-02-10", "Bråk på krogen"));
-	/*box.insertEmail(email("Erik Almqvist", "2010-06-10", "Järnrör"));
-	box.insertEmail(email("Christian Westling", "2010-06-09", "Bra kväll"));
-	box.insertEmail(email("Anders Borg", "2017-07-28", "Drog jag fram kuken igår..?"));
-	box.insertEmail(email("Hackerman", "2018-09-28", "Bool.. kommer det från det engelska ordet buoollshit?"));*/
-
 	box.sortWho();
 
 	show(box);

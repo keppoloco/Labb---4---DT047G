@@ -30,8 +30,7 @@ public:
 		bool operator()(const email& lhs, const email& rhs)
 		{
 			if (lhs.date == lhs.date)
-				if (CompSubjectWhoDate()(lhs, rhs))
-					return false;
+				return !CompSubjectWhoDate()(lhs, rhs);
 
 			return lhs.date < rhs.date;
 		}
