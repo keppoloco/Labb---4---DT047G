@@ -22,7 +22,8 @@ public:
 					return CompSubjectWhoDate()(lhs, rhs);
 				}
 			}
-			return lhs.who < rhs.who;
+			else
+				return lhs.who < rhs.who;
 		}
 	};
 
@@ -30,9 +31,10 @@ public:
 		bool operator()(const email& lhs, const email& rhs)
 		{
 			if (lhs.date == lhs.date)
-				return !CompSubjectWhoDate()(lhs, rhs);
+				return CompSubjectWhoDate()(lhs, rhs);
 
-			return lhs.date < rhs.date;
+			else
+				return lhs.date < rhs.date;
 		}
 	};
 
