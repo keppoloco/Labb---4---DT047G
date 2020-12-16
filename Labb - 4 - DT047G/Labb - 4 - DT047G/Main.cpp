@@ -14,11 +14,11 @@ int main()
 	setlocale(LC_ALL, "");
 	Mailbox box;
 
-	box.insertEmail(email("Anders", "2002-02-28", "lab 4"));
-	box.insertEmail(email("Anders", "2002-02-28", "lab 2"));
-	box.insertEmail(email("Charli", "2010-02-28", "lab 5"));
-	box.insertEmail(email("Anders", "2002-02-28", "lab 3"));
-	box.insertEmail(email("Anders", "2002-02-28", "lab 1"));
+	box.insertEmail(email("a", "2002-02-28", "a"));
+	box.insertEmail(email("b", "2002-02-29", "b"));
+	box.insertEmail(email("c", "2010-02-30", "c"));
+	box.insertEmail(email("d", "2002-02-31", "d"));
+	box.insertEmail(email("e", "2002-03-01", "e"));
 	
 	box.sortWho();
 
